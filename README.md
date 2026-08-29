@@ -18,6 +18,8 @@ Open <http://localhost:8080>, complete the normal WordPress setup, then:
 
 The theme includes demo homepage content by default, so no imported database or plugin is required to see the design.
 
+The portfolio build uses remote Unsplash image URLs for demo photography, so an internet connection is needed for those images to load. Production/client photography can later be moved into the WordPress media library.
+
 ## Editable homepage copy
 
 Go to **Appearance → Customize → Maison Élan — Homepage** to change the hero copy, section headings, about copy and contact details.
