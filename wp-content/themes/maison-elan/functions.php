@@ -18,8 +18,8 @@ add_action('wp_enqueue_scripts', 'elan_assets');
 
 function elan_favicon_tags() {
     $favicon = get_template_directory_uri() . '/assets/images/favicon.svg';
-    printf('<link rel="icon" href="%s" type="image/svg+xml">\n', esc_url($favicon));
-    printf('<link rel="alternate icon" href="%s">\n', esc_url($favicon));
+    printf("<link rel=\"icon\" href=\"%s\" type=\"image/svg+xml\">\n", esc_url($favicon));
+    printf("<link rel=\"alternate icon\" href=\"%s\">\n", esc_url($favicon));
 }
 add_action('wp_head', 'elan_favicon_tags', 1);
 add_action('admin_head', 'elan_favicon_tags', 1);
