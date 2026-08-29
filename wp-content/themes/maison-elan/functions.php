@@ -11,8 +11,10 @@ function elan_theme_setup() {
 add_action('after_setup_theme', 'elan_theme_setup');
 
 function elan_assets() {
-    wp_enqueue_style('maison-elan', get_stylesheet_uri(), [], '0.1.0');
-    wp_enqueue_script('maison-elan', get_template_directory_uri() . '/assets/js/theme.js', [], '0.1.0', true);
+    $theme_version = wp_get_theme()->get('Version');
+    wp_enqueue_style('maison-elan', get_stylesheet_uri(), [], $theme_version);
+    wp_enqueue_style('maison-elan-refinements', get_template_directory_uri() . '/assets/css/refinements.css', ['maison-elan'], $theme_version);
+    wp_enqueue_script('maison-elan', get_template_directory_uri() . '/assets/js/theme.js', [], $theme_version, true);
 }
 add_action('wp_enqueue_scripts', 'elan_assets');
 
