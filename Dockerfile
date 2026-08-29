@@ -7,9 +7,7 @@ COPY wp-content/themes/maison-elan /usr/src/wordpress/wp-content/themes/maison-e
 
 EXPOSE 80
 
-# Railway can start recent php/Apache images with more than one Apache MPM
-# enabled. mod_php requires mpm_prefork, so normalize the enabled MPMs at
-# runtime before handing control back to WordPress' official entrypoint.
-# Calling docker-entrypoint.sh explicitly also keeps the WordPress bootstrap
-# behavior intact if the platform changes/overrides the inherited entrypoint.
-CMD ["bash", "-lc", "a2dismod mpm_event mpm_worker >/dev/null 2>&1 || true; rm -f /etc/apache2/mods-enabled/mpm_event.* /etc/apache2/mods-enabled/mpm_worker.*; a2enmod mpm_prefork >/dev/null 2>&1 || true; exec docker-entrypoint.sh apache2-foreground"]
+# Railway mounts persistent volumes as root. WordPress/Apache writes uploads
+# as www-data, so repair the uploads directory ownership at container startup.
+# Also normalize Apache MPMs because mod_php requires mpm_prefork.
+CMD ["bash", "-lc", "mkdir -p /var/www/html/wp-content/uploads; chown -R www-data:www-data /var/www/html/wp-content/uploads; a2dismod mpm_event mpm_worker >/dev/null 2>&1 || true; rm -f /etc/apache2/mods-enabled/mpm_event.* /etc/apache2/mods-enabled/mpm_worker.*; a2enmod mpm_prefork >/dev/null 2>&1 || true; exec docker-entrypoint.sh apache2-foreground"]
