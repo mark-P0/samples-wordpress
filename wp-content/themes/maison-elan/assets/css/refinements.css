@@ -1,0 +1,39 @@
+/* Small layout refinements that track the approved homepage reference. */
+
+/* The hero content uses .elan-shell and .elan-hero__content on the same node.
+   Keep the shell at the site's full content width so the copy starts on the
+   same left edge as the rest of the page instead of centering a 570px block. */
+.elan-hero__content {
+  max-width: var(--elan-max);
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Keep the signature-services headline deliberately editorial: one sentence
+   per visual line at desktop/tablet sizes. */
+#services .elan-section__head .elan-title {
+  max-width: 22ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+/* Explicitly align the about kicker, heading and copy to the same left edge. */
+.elan-about__content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.elan-about__content > .elan-kicker,
+.elan-about__content > .elan-title,
+.elan-about__content > .elan-copy {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  #services .elan-section__head .elan-title {
+    max-width: 20ch;
+  }
+}
