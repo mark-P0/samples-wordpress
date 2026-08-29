@@ -27,16 +27,16 @@ services:
       CODESPACE_NAME: "${CODESPACE_NAME:-}"
       GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN: "${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-}"
       WORDPRESS_CONFIG_EXTRA: |
-        if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
-            $_SERVER['HTTPS'] = 'on';
+        if (!empty($$_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($$_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
+            $$_SERVER['HTTPS'] = 'on';
         }
         if (getenv('CODESPACES') === 'true') {
-            $codespaces_host = getenv('CODESPACE_NAME') . '-8080.' . getenv('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN');
-            define('WP_HOME', 'https://' . $codespaces_host);
-            define('WP_SITEURL', 'https://' . $codespaces_host);
-            $_SERVER['HTTPS'] = 'on';
-            $_SERVER['HTTP_HOST'] = $codespaces_host;
-            $_SERVER['SERVER_PORT'] = 443;
+            $$codespaces_host = getenv('CODESPACE_NAME') . '-8080.' . getenv('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN');
+            define('WP_HOME', 'https://' . $$codespaces_host);
+            define('WP_SITEURL', 'https://' . $$codespaces_host);
+            $$_SERVER['HTTPS'] = 'on';
+            $$_SERVER['HTTP_HOST'] = $$codespaces_host;
+            $$_SERVER['SERVER_PORT'] = 443;
         }
     volumes:
       - wordpress_data:/var/www/html
