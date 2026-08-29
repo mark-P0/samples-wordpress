@@ -36,4 +36,48 @@
   #services .elan-section__head .elan-title {
     max-width: 20ch;
   }
+
+  /* Mobile hero: let the photograph and the copy occupy separate visual
+     zones. This keeps the headline off the photograph and guarantees stable
+     contrast regardless of the image crop. */
+  .elan-hero {
+    min-height: 0;
+    background: #e4d8cc;
+    overflow: visible;
+  }
+
+  .elan-hero::before {
+    display: none;
+  }
+
+  .elan-hero__photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(320px, 52vh, 500px);
+    opacity: 1;
+    object-fit: cover;
+    object-position: 62% 45%;
+  }
+
+  .elan-hero__content {
+    min-height: 0;
+    justify-content: flex-start;
+    padding-top: 34px;
+    padding-bottom: 58px;
+  }
+
+  .elan-hero__mark {
+    margin-bottom: 16px;
+  }
+
+  .elan-hero h1 {
+    max-width: 8.5ch;
+    font-size: clamp(2.8rem, 12vw, 3.75rem);
+    line-height: .98;
+  }
+
+  .elan-hero p {
+    margin-top: 24px;
+  }
 }
