@@ -1,0 +1,156 @@
+/*
+Theme Name: Maison Élan
+Theme URI: https://example.com/maison-elan
+Author: Portfolio Sample
+Description: A bespoke premium beauty and aesthetics studio theme, created as a WordPress portfolio sample.
+Version: 0.1.0
+Text Domain: maison-elan
+*/
+
+:root {
+  --elan-bg: #fbfaf7;
+  --elan-surface: #ffffff;
+  --elan-soft: #f2ebe3;
+  --elan-ink: #171512;
+  --elan-muted: #6d675f;
+  --elan-gold: #a9782a;
+  --elan-gold-dark: #835b1d;
+  --elan-border: #e9e3da;
+  --elan-max: 1180px;
+  --elan-serif: Georgia, 'Times New Roman', serif;
+  --elan-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--elan-bg);
+  color: var(--elan-ink);
+  font-family: var(--elan-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+
+.elan-shell { width: min(calc(100% - 40px), var(--elan-max)); margin-inline: auto; }
+.elan-kicker { margin: 0 0 8px; color: var(--elan-gold); font-size: .73rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+.elan-title { margin: 0; font-family: var(--elan-serif); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 400; line-height: 1.08; letter-spacing: -.025em; }
+.elan-copy { color: var(--elan-muted); max-width: 62ch; }
+.elan-button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 24px; border: 1px solid var(--elan-gold); background: var(--elan-gold); color: white; font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; transition: .2s ease; }
+.elan-button:hover { background: var(--elan-gold-dark); border-color: var(--elan-gold-dark); transform: translateY(-1px); }
+.elan-button--ghost { background: transparent; color: var(--elan-gold-dark); }
+.elan-button--ghost:hover { color: #fff; }
+
+.elan-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(23,21,18,.06); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); }
+.elan-header__inner { min-height: 88px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 28px; }
+.elan-brand { font-family: var(--elan-serif); color: var(--elan-gold-dark); font-size: clamp(1.65rem, 3vw, 2rem); letter-spacing: -.02em; white-space: nowrap; }
+.elan-nav ul { display: flex; justify-content: center; align-items: center; gap: 31px; margin: 0; padding: 0; list-style: none; }
+.elan-nav a { position: relative; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.elan-nav a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -12px; height: 1px; background: var(--elan-gold); transition: right .2s ease; }
+.elan-nav a:hover::after, .elan-nav .current-menu-item a::after { right: 0; }
+.elan-menu-toggle { display: none; border: 0; background: none; font-size: 1.4rem; }
+
+.elan-hero { position: relative; min-height: 610px; overflow: hidden; background: #e8ddd2; }
+.elan-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #e4d8cc 0%, #e4d8cc 38%, rgba(228,216,204,.86) 46%, rgba(228,216,204,.16) 67%, rgba(228,216,204,0) 100%); z-index: 1; }
+.elan-hero__photo { position: absolute; inset: 0 0 0 38%; width: 62%; height: 100%; object-fit: cover; object-position: center 45%; }
+.elan-hero__content { position: relative; z-index: 2; min-height: 610px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; max-width: 570px; padding-block: 70px; }
+.elan-hero__mark { color: var(--elan-gold); font-family: var(--elan-serif); font-style: italic; font-size: 1.55rem; margin-bottom: 20px; }
+.elan-hero h1 { margin: 0; max-width: 620px; font-family: var(--elan-serif); font-weight: 400; font-size: clamp(3rem, 6vw, 5.65rem); line-height: .98; letter-spacing: -.045em; }
+.elan-hero p { margin: 24px 0 30px; max-width: 470px; color: #403a34; font-size: 1rem; }
+
+.elan-section { padding: 88px 0; }
+.elan-section--white { background: #fff; }
+.elan-section--soft { background: #f8f4ef; }
+.elan-section__head { text-align: center; max-width: 760px; margin: 0 auto 40px; }
+
+.elan-services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.elan-card { background: #fff; border: 1px solid var(--elan-border); box-shadow: 0 7px 24px rgba(37,28,18,.045); }
+.elan-service__image { aspect-ratio: 1.55; width: 100%; object-fit: cover; }
+.elan-service__body { padding: 20px; }
+.elan-service__title { margin: 0 0 8px; font-size: .77rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.elan-service__desc { margin: 0 0 18px; color: var(--elan-muted); font-size: .88rem; }
+.elan-text-link { color: var(--elan-gold-dark); font-size: .72rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+
+.elan-about { display: grid; grid-template-columns: 1fr 1.06fr; align-items: stretch; }
+.elan-about__image { width: 100%; height: 100%; min-height: 480px; object-fit: cover; }
+.elan-about__content { display: flex; flex-direction: column; justify-content: center; padding: clamp(40px, 6vw, 84px); background: #fff; }
+.elan-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 34px 0; }
+.elan-value__icon { color: var(--elan-gold); font-family: var(--elan-serif); font-size: 1.8rem; }
+.elan-value strong { display: block; margin-top: 8px; font-size: .79rem; font-weight: 650; }
+
+.elan-specialists { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.elan-person { display: grid; grid-template-columns: 42% 1fr; min-height: 230px; overflow: hidden; }
+.elan-person__image { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.elan-person__body { padding: 24px 22px; }
+.elan-person__name { margin: 0 0 4px; font-family: var(--elan-serif); font-size: 1.45rem; font-weight: 400; }
+.elan-person__role { margin: 0 0 14px; font-size: .76rem; font-weight: 700; }
+.elan-person__bio { margin: 0; color: var(--elan-muted); font-size: .84rem; }
+
+.elan-pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: stretch; }
+.elan-price { position: relative; padding: 36px 28px 28px; text-align: center; background: #fff; border: 1px solid var(--elan-border); }
+.elan-price--featured { border-color: var(--elan-gold); }
+.elan-price__badge { position: absolute; left: -1px; right: -1px; top: -27px; min-height: 27px; display: grid; place-items: center; background: var(--elan-gold); color: #fff; font-size: .65rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.elan-price__name { font-size: .78rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.elan-price__amount { margin: 8px 0 10px; font-family: var(--elan-serif); font-size: 2.7rem; line-height: 1; }
+.elan-price__summary { min-height: 52px; color: var(--elan-muted); font-size: .86rem; }
+.elan-price ul { display: inline-block; margin: 12px auto 28px; padding: 0; text-align: left; list-style: none; color: #4f4a44; font-size: .84rem; }
+.elan-price li { margin: 7px 0; }
+.elan-price li::before { content: '✓'; margin-right: 8px; color: var(--elan-gold); }
+.elan-price .elan-button { width: 100%; }
+
+.elan-testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.elan-quote { position: relative; min-height: 178px; padding: 28px 28px 22px 48px; background: #fff; border: 1px solid var(--elan-border); }
+.elan-quote::before { content: '“'; position: absolute; left: 18px; top: 8px; color: var(--elan-gold); font-family: var(--elan-serif); font-size: 3rem; line-height: 1; }
+.elan-quote p { margin: 0 0 16px; color: #514b44; font-size: .86rem; }
+.elan-quote cite { display: block; text-align: right; font-size: .7rem; font-style: normal; font-weight: 800; text-transform: uppercase; }
+
+.elan-visit { display: grid; grid-template-columns: .95fr 1.05fr; background: #ded0c4; }
+.elan-visit__image { min-height: 360px; width: 100%; height: 100%; object-fit: cover; }
+.elan-visit__content { display: grid; grid-template-columns: 1fr .85fr; gap: 48px; align-items: center; padding: 55px 60px; }
+.elan-contact-list { margin: 25px 0 0; padding: 0; list-style: none; color: #403b36; font-size: .88rem; }
+.elan-contact-list li { margin: 8px 0; }
+.elan-visit__action { padding-left: 36px; border-left: 1px solid rgba(131,91,29,.35); }
+.elan-visit__action p { color: #504841; font-size: .87rem; }
+
+.elan-footer { background: #fff; border-top: 1px solid var(--elan-border); }
+.elan-footer__inner { min-height: 95px; display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; }
+.elan-footer__nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; font-size: .68rem; font-weight: 700; text-transform: uppercase; }
+.elan-footer__meta { color: var(--elan-muted); font-size: .69rem; }
+
+@media (max-width: 980px) {
+  .elan-header__inner { grid-template-columns: 1fr auto; }
+  .elan-nav, .elan-header .elan-button { display: none; }
+  .elan-menu-toggle { display: block; }
+  .elan-header.is-open .elan-nav { display: block; grid-column: 1 / -1; padding: 0 0 24px; }
+  .elan-header.is-open .elan-nav ul { flex-direction: column; gap: 15px; align-items: flex-start; }
+  .elan-hero__photo { left: 28%; width: 72%; opacity: .82; }
+  .elan-hero::before { background: linear-gradient(90deg, #e4d8cc 0%, rgba(228,216,204,.98) 40%, rgba(228,216,204,.68) 67%, rgba(228,216,204,.18)); }
+  .elan-services { grid-template-columns: repeat(2, 1fr); }
+  .elan-specialists { grid-template-columns: 1fr; }
+  .elan-person { min-height: 270px; }
+  .elan-pricing { grid-template-columns: 1fr; gap: 42px; max-width: 650px; margin-inline: auto; }
+  .elan-testimonials { grid-template-columns: 1fr; }
+  .elan-visit, .elan-about { grid-template-columns: 1fr; }
+  .elan-about__image { min-height: 420px; }
+  .elan-visit__image { max-height: 430px; }
+}
+
+@media (max-width: 700px) {
+  .elan-shell { width: min(calc(100% - 28px), var(--elan-max)); }
+  .elan-header__inner { min-height: 72px; }
+  .elan-section { padding: 64px 0; }
+  .elan-hero, .elan-hero__content { min-height: 650px; }
+  .elan-hero__content { justify-content: flex-end; padding-bottom: 60px; }
+  .elan-hero__photo { inset: 0; width: 100%; height: 58%; opacity: 1; object-position: 62% 45%; }
+  .elan-hero::before { background: linear-gradient(180deg, rgba(228,216,204,0) 20%, rgba(228,216,204,.16) 46%, #e4d8cc 59%, #e4d8cc 100%); }
+  .elan-hero h1 { font-size: clamp(2.9rem, 14vw, 4.2rem); }
+  .elan-services { grid-template-columns: 1fr; }
+  .elan-values { gap: 14px; }
+  .elan-person { grid-template-columns: 40% 1fr; min-height: 220px; }
+  .elan-visit__content { grid-template-columns: 1fr; gap: 30px; padding: 42px 28px; }
+  .elan-visit__action { padding: 28px 0 0; border-left: 0; border-top: 1px solid rgba(131,91,29,.35); }
+  .elan-footer__inner { grid-template-columns: 1fr; justify-items: center; padding: 28px 0; text-align: center; }
+}
