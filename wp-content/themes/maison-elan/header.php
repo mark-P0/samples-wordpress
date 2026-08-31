@@ -13,7 +13,7 @@
     <nav class="elan-nav" aria-label="Primary navigation">
       <?php wp_nav_menu(['theme_location' => 'primary', 'container' => false, 'fallback_cb' => 'elan_menu_fallback']); ?>
     </nav>
-    <a class="elan-button" href="#contact">Book consultation</a>
+    <a class="elan-button" href="<?php echo esc_url(elan_contact_url()); ?>">Book consultation</a>
     <button class="elan-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   </div>
 </header>
