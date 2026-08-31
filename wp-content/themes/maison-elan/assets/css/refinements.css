@@ -36,4 +36,19 @@
   #services .elan-section__head .elan-title {
     max-width: 20ch;
   }
+
+  /* Keep the existing text-over-photo composition while giving the large
+     serif heading a restrained warm halo for more consistent local contrast. */
+  .elan-hero h1 {
+    text-shadow:
+      0 0 10px rgba(244, 234, 222, 0.26),
+      0 0 20px rgba(244, 234, 222, 0.14);
+  }
+
+  /* The gold monogram only needs slight definition against brown/light areas. */
+  .elan-hero__mark {
+    text-shadow:
+      0 1px 2px rgba(35, 24, 14, 0.25),
+      0 0 8px rgba(248, 240, 229, 0.16);
+  }
 }
