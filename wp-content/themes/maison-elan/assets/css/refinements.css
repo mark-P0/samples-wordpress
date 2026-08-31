@@ -36,4 +36,37 @@
   #services .elan-section__head .elan-title {
     max-width: 20ch;
   }
+
+  /* self addition */
+  /* #hero-title { */
+    /* text-shadow: 0 0 0.25rem #e4d8cc; */
+  /* } */
+  /* .elan-hero__mark { */
+    /* text-shadow: 0 0 0.25rem black; */
+  /* } */
+
+  /* iter 1 */
+  /* .elan-hero h1 { */
+    /* text-shadow: */
+      /* 0 1px 1px rgba(251, 247, 239, 0.9), */
+      /* 0 0 6px rgba(228, 216, 204, 0.8), */
+      /* 0 0 14px rgba(228, 216, 204, 0.6); */
+  /* } */
+  /* .elan-hero__mark { */
+    /* text-shadow: */
+      /* 0 1px 2px rgba(45, 32, 18, 0.45), */
+      /* 0 0 8px rgba(45, 32, 18, 0.18); */
+  /* } */
+
+  /* iter2 */
+  .elan-hero h1 {
+    text-shadow:
+      0 0 10px rgba(244, 234, 222, 0.26),
+      0 0 20px rgba(244, 234, 222, 0.14);
+  }
+  .elan-hero__mark {
+    text-shadow:
+      0 1px 2px rgba(35, 24, 14, 0.25),
+      0 0 8px rgba(248, 240, 229, 0.16);
+  }
 }
