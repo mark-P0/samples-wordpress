@@ -1,0 +1,427 @@
+.elan-specialists-page,
+.elan-specialist-profile {
+  background: #fff;
+}
+
+.elan-specialists-hero {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+}
+
+.elan-specialists-hero__image,
+.elan-specialists-hero__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.elan-specialists-hero__image {
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.elan-specialists-hero__overlay {
+  background: linear-gradient(90deg, rgba(29, 25, 21, .62), rgba(29, 25, 21, .18));
+}
+
+.elan-specialists-hero__content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+}
+
+.elan-specialists-hero h1 {
+  margin: 0;
+  font-family: var(--elan-serif);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.elan-specialists-hero p {
+  margin: 15px 0 0;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.elan-specialists-intro__copy {
+  max-width: 700px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.elan-specialists-intro__copy > p:last-child {
+  max-width: 560px;
+  margin: 18px auto 0;
+  color: var(--elan-muted);
+}
+
+.elan-specialists-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+
+.elan-specialist-card {
+  border: 1px solid var(--elan-border);
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.elan-specialist-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(37, 28, 18, .07);
+}
+
+.elan-specialist-card__image-link {
+  display: block;
+  overflow: hidden;
+  background: var(--elan-soft);
+}
+
+.elan-specialist-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 3.25;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform .35s ease;
+}
+
+.elan-specialist-card:hover .elan-specialist-card__image {
+  transform: scale(1.015);
+}
+
+.elan-specialist-card__body {
+  padding: 19px 20px 21px;
+}
+
+.elan-specialist-card h2 {
+  margin: 0 0 4px;
+  font-family: var(--elan-serif);
+  font-size: 1.22rem;
+  font-weight: 400;
+  letter-spacing: -.01em;
+}
+
+.elan-specialist-card__role {
+  margin: 0 0 13px;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+
+.elan-specialist-card__bio {
+  min-height: 50px;
+  margin: 0 0 18px;
+  color: var(--elan-muted);
+  font-size: .79rem;
+}
+
+.elan-specialist-card__link {
+  color: var(--elan-gold-dark);
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.elan-specialists-empty {
+  text-align: center;
+  color: var(--elan-muted);
+}
+
+.elan-specialists-cta {
+  padding: 58px 0;
+  background: #6f6254;
+  color: #fff;
+}
+
+.elan-specialists-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+
+.elan-specialists-cta h2 {
+  margin: 0;
+  font-family: var(--elan-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.elan-specialists-cta p:last-child {
+  max-width: 680px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, .8);
+}
+
+.elan-button--light {
+  background: #fff;
+  border-color: #fff;
+  color: var(--elan-ink);
+}
+
+.elan-button--light:hover {
+  background: #f5f0ea;
+  border-color: #f5f0ea;
+  color: var(--elan-ink);
+}
+
+.elan-specialist-profile__breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  color: #7d756d;
+  font-size: .72rem;
+}
+
+.elan-specialist-profile__breadcrumbs a:hover {
+  color: var(--elan-gold-dark);
+}
+
+.elan-specialist-profile__hero {
+  border-top: 1px solid var(--elan-border);
+  border-bottom: 1px solid var(--elan-border);
+  background: #fdfbf8;
+}
+
+.elan-specialist-profile__hero-inner {
+  display: grid;
+  grid-template-columns: 1.04fr .96fr;
+  min-height: 610px;
+}
+
+.elan-specialist-profile__portrait-wrap {
+  min-height: 610px;
+  overflow: hidden;
+  background: #d8cabc;
+}
+
+.elan-specialist-profile__portrait {
+  width: 100%;
+  height: 100%;
+  min-height: 610px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.elan-specialist-profile__intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(44px, 6vw, 82px);
+}
+
+.elan-specialist-profile__intro h1 {
+  margin: 0;
+  font-family: var(--elan-serif);
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.elan-specialist-profile__role {
+  margin: 13px 0 0;
+  font-size: .79rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.elan-specialist-profile__rule {
+  width: 42px;
+  height: 1px;
+  margin: 24px 0;
+  background: var(--elan-gold);
+}
+
+.elan-specialist-profile__bio {
+  color: #4e4943;
+  font-size: .93rem;
+}
+
+.elan-specialist-profile__bio p {
+  margin: 0 0 17px;
+}
+
+.elan-specialist-profile__signature {
+  margin: 12px 0 24px;
+  font-family: var(--elan-serif);
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-style: italic;
+  color: #574d43;
+}
+
+.elan-specialist-profile__intro .elan-button {
+  align-self: flex-start;
+}
+
+.elan-specialist-profile__facts {
+  background: #f4ede5;
+}
+
+.elan-specialist-profile__facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.elan-specialist-profile__facts article {
+  position: relative;
+  min-height: 185px;
+  padding: 33px 28px;
+  text-align: center;
+}
+
+.elan-specialist-profile__facts article + article::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  bottom: 27px;
+  left: 0;
+  width: 1px;
+  background: rgba(131, 91, 29, .2);
+}
+
+.elan-specialist-profile__fact-icon {
+  margin-bottom: 10px;
+  color: var(--elan-gold-dark);
+  font-family: var(--elan-serif);
+  font-size: 1.45rem;
+}
+
+.elan-specialist-profile__facts h2 {
+  margin: 0 0 10px;
+  font-family: var(--elan-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.elan-specialist-profile__facts p,
+.elan-specialist-profile__facts ul {
+  margin: 0;
+  padding: 0;
+  color: #514a43;
+  font-size: .78rem;
+  list-style: none;
+}
+
+.elan-specialist-profile__education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(45px, 7vw, 90px);
+  align-items: center;
+}
+
+.elan-specialist-profile__education ul {
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.elan-specialist-profile__education li {
+  position: relative;
+  margin: 14px 0;
+  padding-left: 27px;
+  color: #504a44;
+  font-size: .84rem;
+}
+
+.elan-specialist-profile__education li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--elan-gold-dark);
+}
+
+.elan-specialist-profile__education img {
+  width: 100%;
+  min-height: 330px;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 980px) {
+  .elan-specialists-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .elan-specialist-profile__hero-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .elan-specialist-profile__intro {
+    padding: 42px;
+  }
+
+  .elan-specialist-profile__education-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+  }
+}
+
+@media (max-width: 700px) {
+  .elan-specialists-hero {
+    min-height: 265px;
+  }
+
+  .elan-specialists-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .elan-specialist-card__bio {
+    min-height: 0;
+  }
+
+  .elan-specialists-cta__inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .elan-specialist-profile__hero-inner,
+  .elan-specialist-profile__education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elan-specialist-profile__portrait-wrap,
+  .elan-specialist-profile__portrait {
+    min-height: 470px;
+  }
+
+  .elan-specialist-profile__intro {
+    padding: 44px 20px 52px;
+  }
+
+  .elan-specialist-profile__facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .elan-specialist-profile__facts article + article::before {
+    top: 0;
+    bottom: auto;
+    left: 28px;
+    right: 28px;
+    width: auto;
+    height: 1px;
+  }
+
+  .elan-specialist-profile__facts article {
+    min-height: 0;
+    padding: 29px 24px;
+  }
+}
