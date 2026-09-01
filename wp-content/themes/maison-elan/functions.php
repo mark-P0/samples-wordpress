@@ -1,6 +1,8 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
+require_once get_template_directory() . '/inc/content-pages.php';
+
 function elan_theme_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -20,6 +22,9 @@ function elan_assets() {
     }
     if (is_post_type_archive('elan_specialist') || is_singular('elan_specialist')) {
         wp_enqueue_style('maison-elan-specialists', get_template_directory_uri() . '/assets/css/specialists.css', ['maison-elan', 'maison-elan-refinements'], $theme_version);
+    }
+    if (is_page(['pricing', 'studio'])) {
+        wp_enqueue_style('maison-elan-pages', get_template_directory_uri() . '/assets/css/pages.css', ['maison-elan', 'maison-elan-refinements'], $theme_version);
     }
 
     wp_enqueue_script('maison-elan', get_template_directory_uri() . '/assets/js/theme.js', [], $theme_version, true);
@@ -43,7 +48,7 @@ function elan_theme_specialists_url() {
 }
 
 function elan_contact_url() {
-    return home_url('/#contact');
+    return elan_theme_studio_url() . '#contact';
 }
 
 function elan_theme_business_detail($key, $fallback = '') {
@@ -94,8 +99,8 @@ function elan_primary_menu_link_attributes($atts, $item, $args) {
         'home' => home_url('/'),
         'services' => elan_theme_services_url(),
         'specialists' => elan_theme_specialists_url(),
-        'pricing' => home_url('/#pricing'),
-        'studio' => home_url('/#studio'),
+        'pricing' => elan_theme_pricing_url(),
+        'studio' => elan_theme_studio_url(),
         'contact' => elan_contact_url(),
     ];
     if (isset($map[$title])) { $atts['href'] = $map[$title]; }
@@ -109,6 +114,8 @@ function elan_primary_menu_classes($classes, $item, $args) {
     if ($title === 'home' && is_front_page()) { $classes[] = 'current-menu-item'; }
     if ($title === 'services' && (is_post_type_archive('elan_service') || is_singular('elan_service'))) { $classes[] = 'current-menu-item'; }
     if ($title === 'specialists' && (is_post_type_archive('elan_specialist') || is_singular('elan_specialist'))) { $classes[] = 'current-menu-item'; }
+    if ($title === 'pricing' && is_page('pricing')) { $classes[] = 'current-menu-item'; }
+    if ($title === 'studio' && is_page('studio')) { $classes[] = 'current-menu-item'; }
     return array_unique($classes);
 }
 add_filter('nav_menu_css_class', 'elan_primary_menu_classes', 10, 3);
@@ -118,15 +125,17 @@ function elan_menu_fallback() {
         ['Home', home_url('/')],
         ['Services', elan_theme_services_url()],
         ['Specialists', elan_theme_specialists_url()],
-        ['Pricing', home_url('/#pricing')],
-        ['Studio', home_url('/#studio')],
+        ['Pricing', elan_theme_pricing_url()],
+        ['Studio', elan_theme_studio_url()],
         ['Contact', elan_contact_url()],
     ];
     echo '<ul>';
     foreach ($items as $item) {
         $is_current = ($item[0] === 'Home' && is_front_page())
             || ($item[0] === 'Services' && (is_post_type_archive('elan_service') || is_singular('elan_service')))
-            || ($item[0] === 'Specialists' && (is_post_type_archive('elan_specialist') || is_singular('elan_specialist')));
+            || ($item[0] === 'Specialists' && (is_post_type_archive('elan_specialist') || is_singular('elan_specialist')))
+            || ($item[0] === 'Pricing' && is_page('pricing'))
+            || ($item[0] === 'Studio' && is_page('studio'));
         printf('<li%s><a href="%s">%s</a></li>', $is_current ? ' class="current-menu-item"' : '', esc_url($item[1]), esc_html($item[0]));
     }
     echo '</ul>';
