@@ -106,6 +106,7 @@ add_filter('nav_menu_link_attributes', 'elan_primary_menu_link_attributes', 10, 
 function elan_primary_menu_classes($classes, $item, $args) {
     if (!isset($args->theme_location) || $args->theme_location !== 'primary') { return $classes; }
     $title = strtolower(trim(wp_strip_all_tags($item->title)));
+    if ($title === 'home' && is_front_page()) { $classes[] = 'current-menu-item'; }
     if ($title === 'services' && (is_post_type_archive('elan_service') || is_singular('elan_service'))) { $classes[] = 'current-menu-item'; }
     if ($title === 'specialists' && (is_post_type_archive('elan_specialist') || is_singular('elan_specialist'))) { $classes[] = 'current-menu-item'; }
     return array_unique($classes);
@@ -123,7 +124,8 @@ function elan_menu_fallback() {
     ];
     echo '<ul>';
     foreach ($items as $item) {
-        $is_current = ($item[0] === 'Services' && (is_post_type_archive('elan_service') || is_singular('elan_service')))
+        $is_current = ($item[0] === 'Home' && is_front_page())
+            || ($item[0] === 'Services' && (is_post_type_archive('elan_service') || is_singular('elan_service')))
             || ($item[0] === 'Specialists' && (is_post_type_archive('elan_specialist') || is_singular('elan_specialist')));
         printf('<li%s><a href="%s">%s</a></li>', $is_current ? ' class="current-menu-item"' : '', esc_url($item[1]), esc_html($item[0]));
     }
