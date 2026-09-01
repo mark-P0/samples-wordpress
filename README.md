@@ -41,11 +41,13 @@ WordPress admin exposes:
 - **Testimonials** — quote and client display name.
 - **Settings → Maison Élan** — reusable address, phone, Instagram, and email.
 
-The homepage queries these same records, so changes are reflected anywhere the content is reused.
+The homepage and Pricing/Studio pages query these same records and settings, so changes are reflected anywhere the content is reused.
 
 ### Theme
 
 Go to **Appearance → Customize → Maison Élan — Homepage** for presentation-specific homepage copy such as the hero, section headings, and about text.
+
+The theme also provisions the lightweight WordPress page records required for the `/pricing/` and `/studio/` presentation templates on an existing active-theme installation.
 
 ## Routes
 
@@ -54,6 +56,8 @@ Go to **Appearance → Customize → Maison Élan — Homepage** for presentatio
 - `/services/{service}/` — Service details
 - `/specialists/` — Specialists archive
 - `/specialists/{specialist}/` — Specialist profile
+- `/pricing/` — Service pricing and packages
+- `/studio/` — Studio details and contact
 
 ## Deployment
 
@@ -69,6 +73,8 @@ Implemented:
 - CMS-backed homepage Services, Specialists, Packages, and Testimonials
 - Services archive and detail pages
 - Specialists archive and profile pages
+- Pricing page backed by Service and Package records
+- Studio page backed by shared business details
 - shared editable business details
 - development and production Docker workflow
 
