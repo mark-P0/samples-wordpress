@@ -41,6 +41,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./wp-content/themes/maison-elan:/var/www/html/wp-content/themes/maison-elan
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
 
 volumes:
   db_data:
